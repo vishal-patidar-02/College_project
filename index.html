@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TuroGuide Start your travel journey</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <style>
+      body {
+        background-color: rgba(0, 0, 0, 0.603);
+        font-family: "Courier New", Courier, monospace;
+      }
+
+      .nav {
+        position: sticky;
+        background-color: rgba(0, 0, 0, 0.651);
+        width: 100%;
+        height: 4rem;
+        border-radius: 1rem;
+        display: flex;
+      }
+
+      .nav-home {
+        position: absolute;
+        height: 100%;
+        margin: 0.6rem 0 0 1rem;
+      }
+
+      .nav-home-icon {
+        color: yellowgreen;
+        transform: scale(1.8);
+      }
+
+      .nav-home-name {
+        color: yellowgreen;
+        font-size: 2rem;
+        padding: 0 0 0.4rem 0.8rem;
+        transform: scale(1.8);
+        text-decoration: none;
+      }
+
+      .nav-search {
+        margin: auto;
+      }
+
+      .nav-search-input {
+        border: 3px solid yellowgreen;
+        width: 20rem;
+        height: 1.2rem;
+        border-radius: 1rem;
+      }
+
+      .nav-search-btn {
+        background-color: white;
+        height: 1.7rem;
+        border-radius: 0.6rem;
+        border: 3px solid yellowgreen;
+      }
+
+      .nav-user {
+        margin: 1.3rem 3rem 0 0;
+        padding-left: 1rem;
+      }
+
+      .nav-user-sign {
+        text-decoration: none;
+        color: yellowgreen;
+      }
+
+      .main {
+        background-color: rgba(0, 0, 0, 0.658);
+        height: 49rem;
+        border-radius: 1rem;
+        margin-top: 0.5rem;
+        padding: 1rem 1rem 1rem 1rem;
+      }
+
+      .main-option {
+        background-color: rgba(0, 0, 0, 0.692);
+        width: 100%;
+        height: 4rem;
+        padding-bottom: 0.5rem;
+        border-radius: 0.5rem;
+      }
+
+      #filters {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+
+      .filter {
+        text-align: center;
+        margin-left: 2rem;
+        margin-top: 1rem;
+        font-size: 0.8rem;
+        color: yellowgreen;
+      }
+
+      .main-listing {
+        background-color: rgba(0, 0, 0, 0.692);
+        width: 100%;
+        /* height: 45rem; */
+        height: fit-content;
+        margin-top: 0.5rem;
+        border-radius: 0.5rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+      }
+
+      .main-list-card {
+        width: 18rem;
+        height: 20rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        border-radius: 1rem;
+        background-color: rgb(16, 17, 17);
+        box-shadow: 1.5px 4px 8px rgba(243, 243, 243, 0.452);
+        transition: 0.3s;
+      }
+
+      .main-container {
+        color: white;
+        padding: 0.1rem 0.5rem 0.5rem 1rem;
+      }
+
+      .main-list-img {
+        border-top-left-radius: 1rem;
+        border-top-right-radius: 1rem;
+      }
+
+      .footer {
+        color: white;
+        height: 18rem;
+        width: 100%;
+        margin-top: 0.5rem;
+        padding-top: 1rem;
+        border-radius: 1rem;
+        background-color: rgba(0, 0, 0, 0.658);
+        text-align: center;
+      }
+
+      .footer-info-anchor {
+        text-decoration: none;
+        color: white;
+        margin-left: 0.5rem;
+      }
+
+      .footer-opt{
+        margin-top: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="nav">
+      <div class="nav-home">
+        <i class="fa-solid fa-plane-departure nav-home-icon"></i>
+        <a class="nav-home-name" href="/home">TuroGuide</a>
+      </div>
+
+      <div class="nav-search">
+        <i class="fa-solid fa-magnifying-glass" style="color: yellowgreen"></i>
+        <input
+          placeholder="Your destination"
+          class="nav-search-input"
+          type="text"
+        />
+        <button class="nav-search-btn">Search</button>
+      </div>
+
+      <div class="nav-user">
+        <i class="fa-solid fa-user" style="color: yellowgreen"></i>
+        <a class="nav-user-sign" href="/sign-in">SignIn</a>
+        <a class="nav-user-sign" href="/sign_up">SignUP</a>
+        <i
+          class="fa-solid fa-list"
+          style="color: yellowgreen; transform: scale(1.3)"
+        ></i>
+      </div>
+    </div>
+    <div class="main">
+      <div class="main-option">
+        <div id="filters">
+          <div class="filter">
+            <div><i class="fa-solid fa-fire"></i></div>
+            <p>Trending</p>
+          </div>
+          <div class="filter">
+            <div><i class="fa-solid fa-bed"></i></div>
+            <p>Rooms</p>
+          </div>
+          <div class="filter">
+            <div><i class="fa-solid fa-mountain-city"></i></div>
+            <p>Iconic cities</p>
+          </div>
+          <div class="filter">
+            <div><i class="fa-solid fa-mountain-sun"></i></div>
+            <p>Moutains</p>
+          </div>
+          <div class="filter">
+            <div><i class="fa-brands fa-fort-awesome"></i></div>
+            <p>castles</p>
+          </div>
+          <div class="filter">
+            <div><i class="fa-solid fa-person-swimming"></i></div>
+            <p>Amazing pools</p>
+          </div>
+          <div class="filter">
+            <div><i class="fa-solid fa-campground"></i></div>
+            <p>Camping</p>
+          </div>
+          <div class="filter">
+            <div><i class="fa-solid fa-cow"></i></div>
+            <p>Farms</p>
+          </div>
+          <div class="filter">
+            <div><i class="fa-regular fa-snowflake"></i></div>
+            <p>Arctic</p>
+          </div>
+          <div class="filter">
+            <div><i class="fa-solid fa-star"></i></div>
+            <p>Most Rated</p>
+          </div>
+          <div class="filter">
+            <div><i class="fa-solid fa-door-open"></i></div>
+            <p>Newly Places</p>
+          </div>
+        </div>
+
+        <div class="main-listing">
+          <div class="main-list-card">
+            <img
+              src="frames-for-your-heart-2d4lAQAlbDA-unsplash.jpg"
+              alt="place"
+              class="main-list-img"
+              style="width: 100%"
+            />
+            <div class="main-container">
+              <h4><b>Cozy Beachfront Cottage</b></h4>
+              <p>&#8377;1,200/Night</p>
+            </div>
+          </div>
+          <div class="main-list-card">
+            <img
+              src="abdul-muiz-khan-DG8ai3LQC0U-unsplash.jpg"
+              alt="place"
+              class="main-list-img"
+              style="width: 100%"
+            />
+            <div class="main-container">
+              <h4><b>Modern Loft in Downtown</b></h4>
+              <p>&#8377;1,500/Nightr</p>
+            </div>
+          </div>
+          <div class="main-list-card">
+            <img
+              src="boxed-water-is-better-M8CClPDw02I-unsplash.jpg"
+              alt="place"
+              class="main-list-img"
+              style="width: 100%"
+            />
+            <div class="main-container">
+              <h4><b>Safari Lodge in the Serengeti</b></h4>
+              <p>&#8377;1,600/Night</p>
+            </div>
+          </div>
+          <div class="main-list-card">
+            <img
+              src="chris-9Gu9OZ63K_g-unsplash.jpg"
+              alt="place"
+              class="main-list-img"
+              style="width: 100%"
+            />
+            <div class="main-container">
+              <h4><b>Mountain Retreat</b></h4>
+              <p>&#8377;1,000/Night</p>
+            </div>
+          </div>
+          <div class="main-list-card">
+            <img
+              src="emma-fabbri-2TmsyZXMNTE-unsplash.jpg"
+              alt="place"
+              class="main-list-img"
+              style="width: 100%"
+            />
+            <div class="main-container">
+              <h4><b>Historic Villa in Tuscany</b></h4>
+              <p>&#8377;1,900/Night</p>
+            </div>
+          </div>
+          <div class="main-list-card">
+            <img
+              src="1346371-kerala.webp"
+              alt="place"
+              class="main-list-img"
+              style="width: 100%"
+            />
+            <div class="main-container">
+              <h4><b>Secluded Beach House in Costa Rica</b></h4>
+              <p>&#8377;1,100/Nightr</p>
+            </div>
+          </div>
+          <div class="main-list-card">
+            <img
+              src="frames-for-your-heart-mR1CIDduGLc-unsplash.jpg"
+              alt="place"
+              class="main-list-img"
+              style="width: 100%"
+            />
+            <div class="main-container">
+              <h4><b>Art Deco Apartment in Miami</b></h4>
+              <p>&#8377;2,000/Night</p>
+            </div>
+          </div>
+          <div class="main-list-card">
+            <img
+              src="jack-bulmer-FuAO6KOaA9I-unsplash.jpg"
+              alt="place"
+              class="main-list-img"
+              style="width: 100%"
+            />
+            <div class="main-container">
+              <h4><b>Secluded Treehouse Getaway</b></h4>
+              <p>&#8377;1,200/Night</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="footer-opt">
+        <i class="fa-solid fa-circle-info" ></i>
+        <a href="/about_us" class="footer-info-anchor">About us</a>
+      </div>
+      <div class="footer-opt">
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-twitter"></i>
+        <i class="fa-brands fa-instagram"></i>
+      </div>
+      <div class="footer-opt">
+        <i class="fa-brands fa-linkedin"></i>
+        <i class="fa-brands fa-github fa-xs"></i>
+        <i class="fa-brands fa-youtube"></i>
+      </div>
+      <div class="footer-opt">
+        <i class="fa-solid fa-plane-departure"></i>
+        <p>TuroGuide P.V.T.</p>
+      </div>
+      <div class="footer-opt">
+        <p>Privacy</p>
+        <p>Terms & condition</p>
+        <P>Help</P>
+      </div>
+    </div>
+  </body>
+</html>
